@@ -23,5 +23,5 @@ jobs:
             pip install --upgrade pip
             pip install --upgrade build
 
-    - name: build wheel
-      run: python -m unittest tests
+    - name: run tests
+      run: python setup.py test

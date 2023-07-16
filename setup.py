@@ -22,5 +22,10 @@ setuptools.setup(
     ],
     package_dir = {".": "."},
     packages = setuptools.find_packages(where="."),
-    python_requires = ">=3.6"
+    python_requires = ">=3.6",
+    install_requires=[
+            'torch==2.0.1',
+            'numpy==1.21.5',
+            ],
+      test_suite="tests",
 )
