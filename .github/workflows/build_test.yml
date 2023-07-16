@@ -58,5 +58,5 @@ jobs:
       run: python -m twine upload --skip-existing --verbose dist/*        
       
     - uses: actions/upload-artifact@v2
-      with
+      with:
         path: ./dist/*.whl
