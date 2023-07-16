@@ -26,6 +26,7 @@ setuptools.setup(
     install_requires=[
             'torch==2.0.1',
             'numpy==1.21.5',
+            'tqdm==4.63.0',
             ],
       test_suite="tests",
 )
