@@ -30,9 +30,6 @@ jobs:
     - name: Install wheels
       run: pip install wheel
     
-    - name: Preprint
-      run: echo '---------pre--------'; ls dist/
-    
     - name: Build wheels
       run: python setup.py sdist bdist_wheel
     
