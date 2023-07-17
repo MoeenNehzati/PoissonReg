@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: PoissonReg
+Version: 0.0.1
+Summary: A package for fast sparse poisson regression
+Home-page: https://github.com/MoeenNehzati/PoissonReg
+Author: Moeen Nehzati
+Author-email: moeen.nehzati@nyu.edu
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6

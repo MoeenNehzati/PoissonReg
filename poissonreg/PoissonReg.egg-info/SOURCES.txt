@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+src/PoissonReg.py
+src/__init__.py
+src/PoissonReg.egg-info/PKG-INFO
+src/PoissonReg.egg-info/SOURCES.txt
+src/PoissonReg.egg-info/dependency_links.txt
+src/PoissonReg.egg-info/requires.txt
+src/PoissonReg.egg-info/top_level.txt
+tests/test_sample.py
