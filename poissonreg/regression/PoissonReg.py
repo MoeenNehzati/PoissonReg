@@ -44,7 +44,7 @@ Returns:
         "Y": Y,
     }
 
-def train_one_epoch(model, X, Y, max_steps=200, optimizer = None, verbose = True, threshold=0.000001):
+def train_one_epoch(model, X, Y, W, max_steps=200, optimizer = None, verbose = True, threshold=0.000001):
     """
 Trains the model on dependant/independant variables.
 Args:
@@ -54,6 +54,8 @@ Args:
         The n*k independant variable
     Y: tensor.torch
         The flat dependant variable
+    W: tensor.torch
+        The flat weights of samples
     max_steps: int, default 200
         Maximum number of steps to take for the optimization.
     optimizer: torch.optim.Optimizer, default None
