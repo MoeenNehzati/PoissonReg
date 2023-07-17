@@ -75,7 +75,7 @@ Returns: list(float)
         optimizer.zero_grad()
         loss = model.get_loss(X, Y, W)
         loss.backward()
-        max_grad_size = np.max([p.abs().max().item() for p in model.parameters()])
+        max_grad_size = np.max([p.grad.abs().max().item() for p in model.parameters()])
         if max_grad_size<threshold:
             if verbose:
                 print(f"success after {i} steps")
