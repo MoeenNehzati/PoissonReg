@@ -27,6 +27,9 @@ jobs:
             pip install --upgrade pip
             pip install --upgrade build
 
+    - name: Install wheels
+      run: pip install wheel
+
     - name: Build wheels
       run: python setup.py sdist bdist_wheel
       
