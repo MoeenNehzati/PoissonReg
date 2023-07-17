@@ -5,7 +5,7 @@ with open("README.md", "r", encoding = "utf-8") as fh:
 
 setuptools.setup(
     name = "poissonreg",
-    version = "0.0.1.4",
+    version = "0.0.1.5",
     author = "Moeen Nehzati",
     author_email = "moeen.nehzati@nyu.edu",
     description = "A package for fast sparse poisson regression",
