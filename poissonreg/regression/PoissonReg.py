@@ -44,7 +44,7 @@ Returns:
         "Y": Y,
     }
 
-def train_one_epoch(model, X, Y, W, max_steps=200, optimizer = None, verbose = True, threshold=0.000001):
+def train_one_epoch(model, X, Y, W, max_steps=200, optimizer = None, verbose = True, threshold=1e-11):
     """
 Trains the model on dependant/independant variables.
 Args:
@@ -75,7 +75,8 @@ Returns: list(float)
         optimizer.zero_grad()
         loss = model.get_loss(X, Y, W)
         loss.backward()
-        if abs(losses[-1]-loss)<threshold:
+        max_grad_size = np.max([p.abs().max().item() for p in model.parameters()])
+        if max_grad_size<threshold:
             if verbose:
                 print(f"success after {i} steps")
             break
