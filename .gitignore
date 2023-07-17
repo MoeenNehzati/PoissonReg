@@ -2,3 +2,5 @@ build/**
 dist/**
 PoissonReg.egg-info/**
 .eggs/**
+**egg-info**
+**__pycache**
