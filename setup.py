@@ -3,9 +3,11 @@ import setuptools
 with open("README.md", "r", encoding = "utf-8") as fh:
     long_description = fh.read()
 
+__version__ = "0.0.1.7"
+
 setuptools.setup(
     name = "poissonreg",
-    version = "0.0.1.7",
+    version = __version__,
     author = "Moeen Nehzati",
     author_email = "moeen.nehzati@nyu.edu",
     description = "A package for fast sparse poisson regression",
