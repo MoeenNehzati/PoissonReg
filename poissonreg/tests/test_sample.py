@@ -1,5 +1,5 @@
 import unittest
-from src.PoissonReg import *
+from poissonreg.regression import *
 
 class TestSample(unittest.TestCase):
 
