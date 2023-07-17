@@ -74,12 +74,12 @@ Returns: list(float)
     for i in tqdm(range(max_steps), disable = not verbose):
         optimizer.zero_grad()
         loss = model.get_loss(X, Y, W)
+        loss.backward()
         if abs(losses[-1]-loss)<threshold:
             if verbose:
                 print(f"success after {i} steps")
             break
-        losses.append(loss)
-        loss.backward()
+        losses.append(loss)        
         optimizer.step()
     return losses
 
