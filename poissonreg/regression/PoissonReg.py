@@ -88,16 +88,18 @@ class PoissonRegression(torch.nn.Module):
     Args:
         size: int
             number of variables of the independant variable this model will be used on
+        intercept: bool, default False
+            Whether the linear layer has an intercept
     Attributes:
         size: int
             number of variables of the independant variable this model will be used on
         theta: torch.nn.Linear
             Models parameters consisting of a size*1 layer with intercept  
     """
-    def __init__(self, size):
+    def __init__(self, size, intercept=False):
         super(PoissonRegression, self).__init__()
         self.size = size
-        self.theta = torch.nn.Linear(size, 1)
+        self.theta = torch.nn.Linear(size, 1, intercept)
     
     def forward(self, x):
         linear = self.theta.forward(x)
