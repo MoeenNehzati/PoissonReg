@@ -4,3 +4,4 @@ PoissonReg.egg-info/**
 .eggs/**
 **egg-info**
 **__pycache**
+env/**

@@ -44,7 +44,7 @@ Returns:
         "Y": Y,
     }
 
-def train_one_epoch(model, X, Y, W, max_steps=200, optimizer = None, verbose = True, threshold=1e-11):
+def train(model, X, Y, W, max_steps=200, optimizer = None, verbose = True, threshold=1e-11):
     """
 Trains the model on dependant/independant variables.
 Args:
