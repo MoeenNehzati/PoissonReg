@@ -1,4 +1,2 @@
 
-
-if __name__ == '__main__':
-    unittest.main()
+from poissonreg.tests import test_poisson_regression

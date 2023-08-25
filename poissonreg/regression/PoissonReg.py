@@ -91,15 +91,25 @@ class PoissonRegression(torch.nn.Module):
             number of variables of the independant variable this model will be used on
         intercept: bool, default False
             Whether the linear layer has an intercept
+        l1_weight: float, default 0.
+            Weight assigned to l1 penalization in loss
+        l2_weight: float, default 0.
+            Weight assigned to l2 penalization in loss
     Attributes:
         size: int
             number of variables of the independant variable this model will be used on
         theta: torch.nn.Linear
-            Models parameters consisting of a size*1 layer with intercept  
+            Models parameters consisting of a size*1 layer with intercept
+        l1_weight: float
+            Weight assigned to l1 penalization in loss
+        l2_weight: float
+            Weight assigned to l2 penalization in loss
     """
-    def __init__(self, size, intercept=False):
+    def __init__(self, size, intercept=False, l1_weight=0., l2_weight=0.):
         super(PoissonRegression, self).__init__()
         self.size = size
+        self.l1_weight = l1_weight
+        self.l2_weight = l2_weight
         self.theta = torch.nn.Linear(size, 1, intercept)
     
     def forward(self, x):
@@ -119,5 +129,8 @@ class PoissonRegression(torch.nn.Module):
         W = W / W.sum()
         weighted_Y = Y * W
         log_likelihood = weighted_Y.T @ self.theta.forward(X) - W.T @ self.forward(X)
+        params = torch.nn.utils.parameters_to_vector(self.parameters())
+        l1 = self.l1_weight * torch.norm(params, 1)
+        l2 = self.l2_weight * torch.norm(params, 2)
         loss = -log_likelihood
-        return loss
+        return loss + l1 + l2

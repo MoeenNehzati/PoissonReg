@@ -5,3 +5,4 @@ PoissonReg.egg-info/**
 **egg-info**
 **__pycache**
 env/**
+*-checkpoint.ipynb
