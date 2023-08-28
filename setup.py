@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r", encoding = "utf-8") as fh:
     long_description = fh.read()
 
-__version__ = "0.0.1.13"
+__version__ = "0.0.1.14"
 
 setuptools.setup(
     name = "poissonreg",
@@ -25,9 +25,9 @@ setuptools.setup(
     packages = setuptools.find_packages(),
     python_requires = ">=3.6",
     install_requires=[
-            'torch==2.0.1',
-            'numpy==1.21.5',
-            'tqdm==4.63.0',
+            'torch>=2.0.0',
+            'numpy>=1.20.0',
+            'tqdm>=4.0.0',
             ],
       test_suite="poissonreg.tests",
 )
